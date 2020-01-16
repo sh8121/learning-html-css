@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-family: "Helvetica", sans-serif;
+			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+		</style>
+		<style>
+			#main_header {
+				height: 45px;
+				background-image: url("header_background.png");
+
+				position: relative;
+				line-height: 45px;
+				text-align: center;
+			}
+			#main_header > h1 {
+				color: white;
+			}
+			#main_header > a,
+			#main_header > label {
+				position: absolute;
+				display: block;
+				height: 32px;
+			}
+			#main_header > a.left {
+				width: 62px;
+				left: 5px;
+				top: 7px;
+			}
+			#main_header > label.right {
+				width: 32px;
+				right: 5px;
+				top: 7px;
+			}
+		</style>
+		<style>
+			#main_header > a.left {
+				background-image: url("sprites.png");
+				background-position: 0 0;
+				text-indent: -99999px;
+			}
+			#main_header > label.right {
+				background-image: url("sprites.png");
+				background-position: -62px 0;
+				text-indent: -99999px;
+			}
+		</style>
+		<style>
+			#toggle {
+				display: none;
+			}
+			#toggle + #wrap > #toggle_gnb_wrap {
+				display: none;
+			}
+			#toggle:checked + #wrap > #toggle_gnb_wrap {
+				display: block;
+			}
+		</style>
+		<style>
+			#toggle_gnb_wrap {
+				background: #363636;
+				padding: 15px;
+			}
+			#toggle_gnb_wrap > #toggle_gnb {
+				background: #ffffff;
+				padding: 5px;
+			}
+			#toggle_gnb_wrap > #toggle_gnb > ul {
+				overflow: hidden;
+			}
+			#toggle_gnb_wrap > #toggle_gnb > ul > li {
+				float: left;
+				width: 80px;
+			}
+		</style>
+		<style>
+			#top_gnb {
+				overflow: hidden;
+				border-bottom: 1px solid black;
+				background: #b42111;
+			}
+			#top_gnb > div > a {
+				float: left;
+				width: 25%;
+				color: white;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+			}
+		</style>
+		<style>
+			#bottom_gnb {
+				display: table;
+				width: 100%;
+				border-bottom: 1px solid black;
+			}
+			#bottom_gnb > div {
+				display: table-cell;
+				position: relative;
+			}
+			#bottom_gnb > div > a {
+				display: block;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+			}
+			#bottom_gnb > div > a::before {
+				position: absolute;
+				display: block;
+				left: -1px;
+				top: 9px;
+				width: 1px;
+				height: 15px;
+				border-left: 1px solid black;
+				content: "";
+			}
+		</style>
+	</head>
+	<body>
+		<input id="toggle" type="checkbox" />
+		<div id="wrap">
+			<header id="main_header">
+				<a class="left" href="#">Main</a>
+				<h1>Mobile</h1>
+				<label class="right" for="toggle">Toggle</label>
+			</header>
+			<div id="toggle_gnb_wrap">
+				<div id="toggle_gnb">
+					<ul>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+						<li><a href="#">버튼</a></li>
+					</ul>
+				</div>
+			</div>
+			<nav id="top_gnb">
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+			</nav>
+			<nav id="bottom_gnb">
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+			</nav>
+		</div>
+	</body>
+</html>
