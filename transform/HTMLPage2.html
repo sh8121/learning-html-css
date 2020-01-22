@@ -81,7 +81,22 @@
 				transform: scale(1.2) translateZ(50px);
 			}
 		</style>
-		<style></style>
+		<style>
+			#merry {
+				animation-name: rint;
+				animation-duration: 15s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+			@keyframes rint {
+				from {
+					transform: rotateY(0deg);
+				}
+				to {
+					transform: rotateY(360deg);
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<h1>HTML5 + CSS3 for Modern Web</h1>
