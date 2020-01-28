@@ -6,8 +6,20 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
 		<style>
-			@import url("desktop.css") screen;
-			@import url("print.css") print;
+			@media screen and (orientation: portrait) {
+				html {
+					background: red;
+					color: white;
+					font-weight: bold;
+				}
+			}
+			@media screen and (orientation: landscape) {
+				html {
+					background: green;
+					color: white;
+					font-weight: bold;
+				}
+			}
 		</style>
 	</head>
 	<body>
