@@ -1,0 +1,50 @@
+.button(@width, @height, @radius) {
+	width: @width;
+	height: @height;
+	line-height: @height;
+	text-align: center;
+	border-radius: @radius;
+}
+
+.linearGradient(@start: #000000, @end: #ffffff)
+	when
+	(iscolor(@start))
+	and
+	(iscolor(@end)) {
+	background: @start;
+	background: -moz-linear-gradient(top, @start 0%, @end 100%);
+	background: -webkit-linear-gradient(top, @start 0%, @end 100%);
+	background: -o-linear-gradient(top, @start 0%, @end 100%);
+	background: -ms-linear-gradient(top, @start 0%, @end 100%);
+	background: linear-gradient(top, @start 0%, @end 100%);
+}
+
+.max(@a, @b) when (@a > @b) {
+	width: @a;
+}
+.max(@a, @b) when (@a <= @b) {
+	width: @b;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	margin: 10px;
+	float: left;
+
+	&:nth-child(1) {
+		.linearGradient(#0094ff, #004f89);
+		.button(200px, 100px, 10px);
+	}
+	&:nth-child(2) {
+		.linearGradient(#0094ff + #cc0000, #004f89 + #cc0000);
+		.button(200px, 100px, 10px);
+	}
+	&:nth-child(3) {
+		.linearGradient(#0094ff + #ff0000, #004f89 + #ff0000);
+		.button(200px, 100px, 10px);
+	}
+}
