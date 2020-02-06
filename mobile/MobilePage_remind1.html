@@ -87,6 +87,63 @@
 				width: 25%;
 			}
 		</style>
+		<style>
+			#top_gnb {
+				overflow: hidden;
+				background: #b42111;
+				border-bottom: 1px solid black;
+			}
+			#top_gnb > div > a {
+				float: left;
+				width: 25%;
+				color: white;
+				text-align: center;
+				height: 35px;
+				line-height: 35px;
+			}
+		</style>
+		<style>
+			#bottom_gnb {
+				display: table;
+				width: 100%;
+				border-bottom: 1px solid black;
+			}
+			#bottom_gnb > div {
+				display: table-cell;
+				position: relative;
+			}
+			#bottom_gnb > div > a {
+				display: block;
+				text-align: center;
+				height: 35px;
+				line-height: 35px;
+			}
+			#bottom_gnb > div > a::before {
+				display: block;
+				position: absolute;
+				top: 9px;
+				left: -1px;
+				width: 1px;
+				height: 15px;
+				border-left: 1px solid black;
+				content: "";
+			}
+		</style>
+		<style>
+			#section_header {
+				padding: 20px;
+			}
+			#section_article {
+				padding: 10px;
+			}
+		</style>
+		<style>
+			#main_footer {
+				border-top: 3px solid black;
+				text-align: center;
+				padding: 10px;
+			}
+		</style>
 	</head>
 	<body>
 		<input id="toggle" type="checkbox" />
@@ -110,6 +167,81 @@
 					</ul>
 				</div>
 			</div>
+			<nav id="top_gnb">
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+			</nav>
+			<nav id="bottom_gnb">
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+				<div><a href="#">버튼</a></div>
+			</nav>
+			<section id="main_section">
+				<header id="section_header">
+					<h1>Lorem Ipsum</h1>
+					<time>2012-12-09</time>
+				</header>
+				<article id="section_article">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+						in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum
+						eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+						blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in
+						luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut
+						ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum
+						nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum
+						purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit
+						amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+						nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat
+						pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu
+						adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+						Aliquam scelerisque nisi et turpis pretium at ultricies turpis
+						pharetra.
+					</p>
+					<br />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+						in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum
+						eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+						blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in
+						luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut
+						ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum
+						nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum
+						purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit
+						amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+						nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat
+						pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu
+						adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+						Aliquam scelerisque nisi et turpis pretium at ultricies turpis
+						pharetra.
+					</p>
+					<br />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+						in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum
+						eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+						blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in
+						luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut
+						ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum
+						nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum
+						purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit
+						amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+						nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat
+						pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu
+						adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+						Aliquam scelerisque nisi et turpis pretium at ultricies turpis
+						pharetra.
+					</p>
+				</article>
+			</section>
+			<footer id="main_footer">
+				<h3>HTML5 + CSS3 Basic</h3>
+				<address>Website Layout Basic</address>
+			</footer>
 		</div>
 	</body>
 </html>
