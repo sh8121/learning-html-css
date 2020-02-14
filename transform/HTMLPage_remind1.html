@@ -8,6 +8,7 @@
 			body {
 				width: 200px;
 				margin: 200px auto;
+				-webkit-perspective: 1000;
 			}
 			section {
 				width: 200px;
@@ -37,6 +38,7 @@
 				left: 0;
 				top: 0;
 				opacity: 0.3;
+				backface-visibility: hidden;
 			}
 			div:nth-child(1) {
 				transform: rotateY(0deg) translate3d(0, 0, 100px);

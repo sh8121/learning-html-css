@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
 		<style>
 			* {
@@ -18,6 +17,8 @@
 				width: 600px;
 				margin: 0 auto;
 			}
+		</style>
+		<style>
 			#canvas {
 				position: relative;
 				width: 100%;
@@ -30,51 +31,49 @@
 				top: 30px;
 				transform-style: preserve-3d;
 			}
-			.face {
+			#merry > .face {
 				position: absolute;
-				left: 0;
+				left: -115px;
 				top: 0;
-				margin-left: -115px;
 				backface-visibility: hidden;
 				transform-style: preserve-3d;
 			}
-			.cell {
+			#merry > .face > .cell {
 				width: 230px;
 				height: 150px;
 				margin-bottom: 5px;
-				background: url("http://placehold.it/260x200");
+				background-image: url("http://placehold.it/260x200");
 				background-size: 100% 100%;
-
 				transition-duration: 0.5s;
 			}
-			.face:nth-child(1) {
+			#merry > .face:nth-child(1) {
 				transform: rotateY(0deg) translateZ(-370px);
 			}
-			.face:nth-child(2) {
+			#merry > .face:nth-child(2) {
 				transform: rotateY(36deg) translateZ(-370px);
 			}
-			.face:nth-child(3) {
+			#merry > .face:nth-child(3) {
 				transform: rotateY(72deg) translateZ(-370px);
 			}
-			.face:nth-child(4) {
+			#merry > .face:nth-child(4) {
 				transform: rotateY(108deg) translateZ(-370px);
 			}
-			.face:nth-child(5) {
+			#merry > .face:nth-child(5) {
 				transform: rotateY(144deg) translateZ(-370px);
 			}
-			.face:nth-child(6) {
+			#merry > .face:nth-child(6) {
 				transform: rotateY(180deg) translateZ(-370px);
 			}
-			.face:nth-child(7) {
+			#merry > .face:nth-child(7) {
 				transform: rotateY(216deg) translateZ(-370px);
 			}
-			.face:nth-child(8) {
+			#merry > .face:nth-child(8) {
 				transform: rotateY(252deg) translateZ(-370px);
 			}
-			.face:nth-child(9) {
+			#merry > .face:nth-child(9) {
 				transform: rotateY(288deg) translateZ(-370px);
 			}
-			.face:nth-child(10) {
+			#merry > .face:nth-child(10) {
 				transform: rotateY(324deg) translateZ(-370px);
 			}
 			.cell:hover {
@@ -88,6 +87,7 @@
 				animation-iteration-count: infinite;
 				animation-timing-function: linear;
 			}
+
 			@keyframes rint {
 				from {
 					transform: rotateY(0deg);
