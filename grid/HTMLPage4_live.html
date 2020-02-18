@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				display: grid;
+				grid-template-columns: 300px 1fr;
+				grid-template-rows: 3fr 2fr;
+				grid-gap: 5px;
+			}
+			[class*="cell"] {
+				box-sizing: border-box;
+				border: 5px solid black;
+				border-radius: 5px;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="cell-a">cell a</div>
+			<div class="cell-b">cell b</div>
+			<div class="cell-c">cell c</div>
+			<div class="cell-d">cell d</div>
+		</div>
+	</body>
+</html>
