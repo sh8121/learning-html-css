@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 960px;
+				margin: 0 auto;
+				padding-top: 10px;
+
+				display: grid;
+				grid-template: 70px 1fr 70px / 200px 1fr;
+				grid-gap: 10px;
+				grid-template-areas:
+					"header header"
+					"aside content"
+					"footer footer";
+			}
+			[class*="cell"] {
+				box-sizing: border-box;
+				border: 5px solid black;
+				border-radius: 10px;
+				padding: 10px;
+			}
+			.cell_header {
+				grid-area: header;
+			}
+			.cell_aside {
+				grid-area: aside;
+			}
+			.cell_content {
+				grid-area: content;
+			}
+			.cell_footer {
+				grid-area: footer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="cell_header">
+				<h1>Header</h1>
+			</div>
+			<div class="cell_aside">
+				<h2>Aside</h2>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting
+					industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s, when an unknown printer took a galley of type and
+					scrambled it to make a type specimen book. It has survived not only
+					five centuries,
+				</p>
+			</div>
+			<div class="cell_content">
+				<h2>Content</h2>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting
+					industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s, when an unknown printer took a galley of type and
+					scrambled it to make a type specimen book. It has survived not only
+					five centuries,
+				</p>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting
+					industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s, when an unknown printer took a galley of type and
+					scrambled it to make a type specimen book. It has survived not only
+					five centuries,
+				</p>
+			</div>
+			<div class="cell_footer">
+				<h1>Footer</h1>
+			</div>
+		</div>
+	</body>
+</html>
