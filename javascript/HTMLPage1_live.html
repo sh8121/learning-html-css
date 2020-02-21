@@ -69,8 +69,57 @@
 			var originalScale = 1.0;
 			var createGalleryPosition = function() {
 				var output = "";
-				output += "translateY(" + originalPosition.y + "px)";
+				output += "translateY(" + originalPosition.y + "px) ";
+				output += "rotateY(" + originalRotation.y + "deg)";
+				return output;
 			};
+			var createViewportPosition = function() {
+				var output = "";
+				output += "rotateX(-10deg) ";
+				output += "scaleX(" + originalScale + ") ";
+				output += "scaleY(" + originalScale + ")";
+				return output;
+			};
+
+			$(window).on({
+				mousedown: function(e) {
+					isMouseDown = true;
+					originalPosition.x = e.screenX;
+					e.preventDefault();
+				},
+				mouseup: function(e) {
+					isMouseDown = false;
+					e.preventDefault();
+				},
+				mousemove: function(e) {
+					if (isMouseDown) {
+						var distance = e.screenX - originalPosition.x;
+						originalRotation.y += distance;
+						originalPosition.y += distance / 3;
+						$("#image_gallery").css({
+							transform: createGalleryPosition()
+						});
+						$("#viewport").css({
+							transform: createViewportPosition()
+						});
+						originalPosition.x = e.screenX;
+					}
+					e.preventDefault();
+				},
+				mousewheel: function(e) {
+					var changeScale = originalScale + e.originalEvent.wheelDeltaY / 1000;
+					if (changeScale > 0) {
+						originalScale = changeScale;
+						$("#image_gallery").css({
+							transform: createGalleryPosition()
+						});
+						$("#viewport").css({
+							transform: createViewportPosition()
+						});
+					}
+					e.preventDefault();
+				}
+			});
 		</script>
 	</head>
 	<body>
