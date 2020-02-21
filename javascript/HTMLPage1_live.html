@@ -15,9 +15,63 @@
 				overflow: hidden;
 				background-color: #141414;
 			}
+			#viewport {
+				transform-style: preserve-3d;
+				-webkit-perspective: 1500;
+				perspective: 1500;
+				position: relative;
+				height: 100%;
+				transform: rotateX(-10deg);
+			}
+			#image_gallery {
+				width: 100px;
+				height: 60px;
+				transform-style: preserve-3d;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -50px;
+				margin-top: -30px;
+			}
+			.image {
+				width: 100px;
+				height: 60px;
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				box-sizing: border-box;
+				border: 3px solid white;
+				background: url("http://placehold.it/100x60");
+				background-size: 100% 100%;
+			}
 		</style>
 		<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-		<script></script>
+		<script>
+			$(document).ready(function() {
+				for (var i = 0; i < 200; i++) {
+					var output = "";
+					output += "rotateY(" + i * 20 + "deg) ";
+					output += "translateY(" + i * 5 + "px) ";
+					output += "translateZ(310px) ";
+					$("<div></div>")
+						.addClass("image")
+						.css({
+							transform: output
+						})
+						.appendTo("#image_gallery");
+				}
+			});
+
+			var isMouseDown = false;
+			var originalPosition = { x: 0, y: 0 };
+			var originalRotation = { x: 0, y: 0, z: 0 };
+			var originalScale = 1.0;
+			var createGalleryPosition = function() {
+				var output = "";
+				output += "translateY(" + originalPosition.y + "px)";
+			};
+		</script>
 	</head>
 	<body>
 		<div id="viewport">
