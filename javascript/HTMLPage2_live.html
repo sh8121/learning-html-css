@@ -6,7 +6,114 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="StyleSheet.css" />
 		<script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script></script>
+		<script>
+			$(document).ready(function() {
+				$("#main_navigation a").click(function() {
+					var target = $(this).attr("data-target");
+					$(":not([data-name=" + target + "])").removeClass("active");
+					$("[data-name=" + target + "]").addClass("active");
+				});
+
+				var currentPosition = 1;
+				$("#character > a:nth-child(1)").click(function() {
+					currentPosition -= 1;
+					if (currentPosition < 1) {
+						currentPosition = 3;
+					}
+					$("article").removeClass("show");
+					$("article:nth-of-type(" + currentPosition + ")").addClass("show");
+				});
+				$("#character > a:nth-child(2)").click(function() {
+					currentPosition += 1;
+					if (currentPosition > 3) {
+						currentPosition = 1;
+					}
+					$("article").removeClass("show");
+					$("article:nth-of-type(" + currentPosition + ")").addClass("show");
+				});
+			});
+		</script>
 	</head>
-	<body></body>
+	<body>
+		<hgroup id="title">
+			<h1 data-name="information">Information</h1>
+			<h1 data-name="character">Character</h1>
+			<h1 data-name="multimedia">Multimedia</h1>
+		</hgroup>
+		<section id="container">
+			<div id="main" data-name="main" class="active">
+				<img src="Images/Middle_Foreground.png" alt="메인 페이지" />
+			</div>
+			<div id="information" data-name="information">
+				<img src="Images/Information_Image.png" alt="정보 페이지" />
+				<div class="description">
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s, when an unknown printer took a galley of type
+						and scrambled it to make a type specimen book. It has survived not
+						only five centuries
+					</p>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s, when an unknown printer took a galley of type
+						and scrambled it to make a type specimen book. It has survived not
+						only five centuries
+					</p>
+				</div>
+			</div>
+			<div id="character" data-name="character">
+				<a href="#">Left Button</a>
+				<a href="#">Right Button</a>
+				<article class="show">
+					<h1>Princess Ann</h1>
+					<img src="Images/Character_Text_1.png" alt="캐릭터1 설명" />
+					<img src="Images/Character_1.png" alt="캐릭터1 이미지" />
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s, when an unknown printer took a galley of type
+						and scrambled it to make a type specimen book. It has survived not
+						only five centuries
+					</p>
+				</article>
+				<article>
+					<h1>Joe Bradley</h1>
+					<img src="Images/Character_Text_2.png" alt="캐릭터2 설명" />
+					<img src="Images/Character_2.png" alt="캐릭터2 이미지" />
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s, when an unknown printer took a galley of type
+						and scrambled it to make a type specimen book. It has survived not
+						only five centuries
+					</p>
+				</article>
+				<article>
+					<h1>Radovich</h1>
+					<img src="Images/Character_Text_3.png" alt="캐릭터3 설명" />
+					<img src="Images/Character_3.png" alt="캐릭터3 이미지" />
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s, when an unknown printer took a galley of type
+						and scrambled it to make a type specimen book. It has survived not
+						only five centuries
+					</p>
+				</article>
+			</div>
+			<div id="multimedia" data-name="multimedia">
+				<video width="940" height="480" controls="controls"></video>
+			</div>
+		</section>
+		<nav id="main_navigation">
+			<ul>
+				<li><a href="#" data-target="information">Movie Info</a></li>
+				<li><a href="#" data-target="character">Character</a></li>
+				<li><a href="#" data-target="multimedia">Multimedia</a></li>
+				<li><a href="#">Download</a></li>
+			</ul>
+		</nav>
+	</body>
 </html>
